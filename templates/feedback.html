@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Feedback</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        background-color: #f5f5f5;
+      }
+      .container {
+        max-width: 800px;
+        margin: auto;
+        padding: 20px;
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      h1 {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      .question, .answer, .feedback {
+        margin-bottom: 20px;
+      }
+      .feedback {
+        border: 1px solid #ccc;
+        padding: 20px;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+      }
+      .feedback p {
+        margin: 10px 0;
+      }
+      .feedback strong {
+        display: block;
+        margin-top: 10px;
+      }
+      .btn-primary {
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Feedback</h1>
+      <div class="question">
+        <strong>Question:</strong>
+        <p>{{ question }}</p>
+      </div>
+      <div class="answer">
+        <strong>Your Answer:</strong>
+        <p>{{ answer }}</p>
+      </div>
+      <div class="feedback">
+<!--        <strong>Feedback:</strong>-->
+        <div>
+          {{ feedback|safe }}
+        </div>
+      </div>
+      <a href="{{ url_for('home') }}" class="btn btn-primary">Try another question</a>
+    </div>
+  </body>
+</html>
