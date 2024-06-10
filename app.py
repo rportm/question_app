@@ -6,7 +6,6 @@ from dotenv import load_dotenv
 load_dotenv()
 
 app = Flask(__name__)
-app.secret_key = "your_secret_key"
 
 conceptual_objectives = {
         "lecture_1": [
@@ -114,7 +113,8 @@ def get_llm_feedback(question, answer):
     llm = Groq(model="llama3-70b-8192", api_key=os.getenv("GROQ_API_KEY"))
 
     feedback_markdown = llm.complete(f"""
-    Given a following question and an answer, provide feedback on the answer and suggest improvements.
+    Given a following question and an answer, provide feedback on the answer and suggest contextual improvements.
+    It is important that you also provide the complete correct answer in the end.
     Here follows the Question:{question}
     And here follows the Answer: {answer}\n
     """)
