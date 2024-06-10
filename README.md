@@ -12,7 +12,8 @@ This Flask web application allows users to get a random exam question, submit th
 ## How to run:
 
 1. Clone repository
-2. Get a Groq API key and store it in the `.env_template` file, then rename the file to `.env`
-3. Run the app: `python .\app.py` 
+2. Install requirements: `pip install -r requirements.txt`
+3. Get a Groq API key and store it in the `.env_template` file, then rename the file to `.env`
+4. Run the app: `python .\app.py` 
 
 
